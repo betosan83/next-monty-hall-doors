@@ -1,8 +1,11 @@
 .area {
+    position: relative;
     display: flex;
     height: var(--area-door-height);
     width: var(--area-door-width);
-    flex-grow: 1;
+    flex-direction: column;
+    align-items: center;
+    margin: 5px;
 }
 
 .structure {
@@ -11,6 +14,7 @@
     border-left: 5px solid brown;
     border-top: 5px solid brown;
     border-right: 5px solid brown;
+    width: 90%;
 }
 
 .door {
@@ -24,7 +28,23 @@
     background-color: chocolate;
 }
 
-.numero {
+.number {
     font-size: 3rem;
 
+}
+
+.floor {
+    height: 10px;
+    width: 100%;
+    background-color: #ddd;
+}
+
+.doorhandle {
+    align-self: flex-start;
+    position: absolute;
+    top: calc(0.45 * var(--area-door-height));
+    height: 20px;
+    width: 20px;
+    border-radius: 10px;
+    background-color: brown;
 }
