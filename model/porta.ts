@@ -29,7 +29,7 @@ export default class DoorModel {
         return new DoorModel(this.number, this.hasGift, selected, this.open)
     }
 
-    togleSelection() {
+    toggleSelection() {
         const selected = !this.selected
         return new DoorModel(this.number, this.hasGift, selected, this.open)
     }
