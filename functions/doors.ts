@@ -7,3 +7,15 @@ export function createDoors(qty: number, selected: number): DoorModel[] {
         return new DoorModel(number, hasGift)
     })
 }
+
+export function updateDoors(doors: DoorModel[], changedDoor: DoorModel) :DoorModel[] {
+    return doors.map(currentDoor => {
+        const sameAsChanged = currentDoor.number === changedDoor.number
+
+        if(sameAsChanged) {
+            return changedDoor
+        } else {
+            return changedDoor.open ? currentDoor : currentDoor.unselect()
+        }
+    })
+}
