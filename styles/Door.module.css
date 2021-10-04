@@ -48,3 +48,17 @@
     border-radius: 10px;
     background-color: brown;
 }
+
+.selected {
+    border-left: 5px solid yellow;
+    border-top: 5px solid yellow;
+    border-right: 5px solid yellow;
+}
+
+.selected .number {
+    color: yellow;
+}
+
+.selected .doorhandle {
+    background-color: yellow;
+}
