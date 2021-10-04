@@ -1,0 +1,30 @@
+.area {
+    display: flex;
+    height: var(--area-door-height);
+    width: var(--area-door-width);
+    flex-grow: 1;
+}
+
+.structure {
+    display: flex;
+    flex-grow: 1;
+    border-left: 5px solid brown;
+    border-top: 5px solid brown;
+    border-right: 5px solid brown;
+}
+
+.door {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-grow: 1;
+    padding: 15px;
+
+   
+    background-color: chocolate;
+}
+
+.numero {
+    font-size: 3rem;
+
+}
