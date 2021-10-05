@@ -1,5 +1,6 @@
 import styles from "../styles/Door.module.css"
 import DoorModel from "../model/door"
+import Gift from "../components/Gift"
 
 interface DoorProps {
     value: DoorModel
@@ -29,7 +30,7 @@ export default function Door(props: DoorProps) {
     return (
         <div className={styles.area} onClick={toggleSelection}>
             <div className={`${styles.structure} ${selected} `}>
-                {door.open ? false : renderDoor()}
+                {door.closed ? renderDoor() : door.hasGift ? <Gift></Gift> : false}
             </div>
             <div className={styles.floor}></div>
         </div>
