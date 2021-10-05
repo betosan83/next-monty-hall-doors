@@ -2,7 +2,7 @@ import { useState } from "react";
 import Door from "../components/Door";
 import { createDoors, updateDoors } from "../functions/doors";
 
-export default function Home() {
+export default function Form() {
   
 
   return (
