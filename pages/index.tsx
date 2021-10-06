@@ -1,13 +1,21 @@
-import { useState } from "react";
-import Door from "../components/Door";
-import { createDoors, updateDoors } from "../functions/doors";
+import Card from "../components/Card";
+import styles from "../styles/Form.module.css"
+
 
 export default function Form() {
-  
 
   return (
-    <div style={{display: "flex"}}>
-      <h1>Game Start</h1>
-    </div>
+    <div className={styles.form}>
+      <div>
+        <Card bgcolor="#c0392c" >
+          <h1>Monty Hall</h1>
+        </Card>  
+        <Card />
+      </div>
+      <div>
+        <Card />
+        <Card bgcolor="#28a085" />
+      </div>
+    </div >
   )
 }
