@@ -18,7 +18,7 @@ export default function Game() {
         const validDoors = doors >= 3 && doors <= 100
         const validHasGift = hasGift >=1 && hasGift <= doors
         setValid(validDoors && validHasGift)
-    }, [doors])
+    }, [doors, router.query.doors, router.query.hasGift])
 
     useEffect(() => {
         //Get params from URL using the variable names from file names.
