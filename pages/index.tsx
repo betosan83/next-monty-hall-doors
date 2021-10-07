@@ -25,7 +25,7 @@ export default function Form() {
             value={withGift} onChange={newDoorWithGift => setWithGift(newDoorWithGift)}></NumberInput>
         </Card>
         <Card bgcolor="#28a085">
-          <Link href={`/game/4/2`} passHref={true}>
+          <Link href={`/game/${qtDoors}/${withGift}`} passHref={true}>
             <h2 className={styles.link}>Start</h2>
           </Link>
         </Card>
