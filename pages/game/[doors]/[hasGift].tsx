@@ -7,10 +7,19 @@ import { useRouter } from "next/router"
 
 export default function Game() {
     const router = useRouter()
+    const [valid, setValid] = useState(false)
     const [doors, setDoors] = useState([])
 
     // The hook useEffect altes state of the component 
     // whenever an variable changes. When the data inside [] modifies.
+    useEffect(() => {
+        const doors = +router.query.doors
+        const hasGift = +router.query.hasGift
+        const validDoors = doors >= 3 && doors <= 100
+        const validHasGift = hasGift >=1 && hasGift <= doors
+        setValid(validDoors && validHasGift)
+    }, [doors])
+
     useEffect(() => {
         //Get params from URL using the variable names from file names.
         const doors = +router.query.doors
@@ -19,7 +28,7 @@ export default function Game() {
     }, [router?.query])
 
     function renderDoors() {
-        return doors.map(door => {
+        return valid && doors.map(door => {
             return <Door key={door.number} value={door}
                 onChange={newDoor => setDoors(updateDoors(doors, newDoor))} />
         })
@@ -27,7 +36,8 @@ export default function Game() {
     return (
         <div className={styles.game}>
             <div className={styles.doors}>
-                {renderDoors()}
+                {valid ? renderDoors() : 
+                 <h1>Invalid values!</h1>}
             </div>
             <div className={styles.buttons}>
                 <Link href="/" passHref={true}>
