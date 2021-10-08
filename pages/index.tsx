@@ -15,13 +15,13 @@ export default function Form() {
           <h1>Monty Hall</h1>
         </Card>
         <Card>
-          <NumberInput text="Number of doors"
+          <NumberInput text="Number of Doors"
             value={qtDoors} onChange={newQt => setQtDoors(newQt)}></NumberInput>
         </Card>
       </div>
       <div>
         <Card >
-          <NumberInput text="Door with gift"
+          <NumberInput text="Gift Location"
             value={withGift} onChange={newDoorWithGift => setWithGift(newDoorWithGift)}></NumberInput>
         </Card>
         <Card bgcolor="#28a085">
